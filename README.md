@@ -36,6 +36,8 @@ Reporting: Capability to export system records and user statistics in PDF/CSV fo
 ├── /api            # Asynchronous TMDB API data processing logic
 └── index.php       # Main application entry point
 
+Project Documentation
+You can find the detailed project report, including system architecture, database design (15 tables, 3NF), and security protocols in the docs/ folder.
 
 Developed by: Selin Avcı 
 

@@ -1,0 +1,403 @@
+/* =========================================
+   1. TEMEL AYARLAR (Hafta 3 & 4)
+   ========================================= */
+
+/* HAFTA 5 - SAYFA 14: Kutu modelini sabitleme */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* HAFTA 3: Standart Font Ailesi ve Arkaplan Renkleri */
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #0a0a0a; /* Sinematik Siyah */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    /* HAFTA 1: Okunabilirlik için satır yüksekliği */
+    line-height: 1.6;
+}
+
+/* HAFTA 4: Link (Anchor) Stilleri */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    /* HAFTA 4: Geçiş Efekti (Transition) */
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* =========================================
+   2. HEADER (BAŞLIK ALANI) (Hafta 4)
+   ========================================= */
+header {
+    background-color: #000000;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 4px solid #b20710;
+}
+
+header h1 {
+    margin: 0;
+    /* HAFTA 3: Yazı Tipi Özellikleri */
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5.5em;
+    color: #b20710;
+    letter-spacing: 5px;
+    /* GÜNCELLEME: Parlamayan mat siyah gölge */
+    text-shadow: 2px 2px 4px #000000;
+}
+
+header p {
+    /* HAFTA 3: Rengi soluk griye çekildi */
+    color: #555555;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    /* HAFTA 4: Yazıyı yukarı çeken negatif margin */
+    margin-top: -35px;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   3. NAVİGASYON (MENÜ) (Hafta 5 - Float)
+   ========================================= */
+nav {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333333;
+    width: 100%;
+    height: 70px;
+    /* HAFTA 4: Konumlandırma (Sticky) */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-wrapper {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* HAFTA 5: Float ile elemanları yan yana dizme */
+nav ul {
+    float: left;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    padding: 25px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #b3b3b3;
+}
+
+/* HAFTA 4: Hover (Sahte Sınıf) durumu */
+nav li a:hover, nav li a.active {
+    color: #ffffff;
+    background-color: #b20710;
+}
+
+.search-area {
+    /* HAFTA 5: Float right ile sağa yaslama */
+    float: right;
+    padding: 15px 0;
+}
+
+/* Hafta 5 - Sayfa 20: Clearfix Hack */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.search-area input {
+    background-color: #000000;
+    border: 1px solid #444444;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    outline: none;
+    width: 200px;
+    font-family: inherit;
+}
+
+/* =========================================
+   4. SAYFA LAYOUT (Hafta 5 - Float & Clearfix)
+   ========================================= */
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 40px auto;
+}
+
+/* Sol İçerik Alanı (%75 Genişlik) */
+.main-content {
+    float: left;
+    width: 75%;
+    padding-right: 30px;
+}
+
+/* Sağ Yan Menü (%25 Genişlik) */
+aside {
+    float: left;
+    width: 25%;
+}
+
+.section-head {
+    font-family: 'Bebas Neue';
+    font-size: 2.5em;
+    border-left: 6px solid #b20710;
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   5. FİLM KARTLARI (Hafta 5 - Izgara Mantığı)
+   ========================================= */
+.movie-column {
+    float: left;
+    width: 31.33%;
+    margin: 1%;
+}
+
+.movie-card {
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    border: 1px solid #333333;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.movie-card:hover {
+    border-color: #b20710;
+    transform: translateY(-10px);
+}
+
+.price-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #b20710;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 3px;
+    filter: brightness(0.8);
+}
+
+.movie-card:hover img {
+    filter: brightness(1);
+}
+
+.movie-card h3 {
+    font-size: 16px;
+    margin: 15px 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================================
+   6. YENİ: DETAY SAYFASI ÖZEL (Selin'in İstediği Düzen)
+   ========================================= */
+
+/* Gişe ve Ödül Kutularını Zarifleştirme */
+.info-grid { 
+    display: flex; 
+    gap: 20px; 
+    margin: 25px 0; 
+}
+
+.info-box { 
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03); 
+    padding: 18px; 
+    border-radius: 4px; 
+    border: 1px solid #222;
+    border-top: 3px solid #b20710;
+}
+
+.info-box h4 { 
+    margin: 0 0 8px 0; 
+    font-family: 'Bebas Neue'; 
+    font-size: 15px; 
+    color: #b20710; 
+    letter-spacing: 1px;
+}
+
+.info-box p { margin: 0; font-size: 12px; color: #999; }
+
+/* Diversity Butonları */
+.meta-btn { 
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-size: 10px;
+    color: #aaa;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.meta-btn:hover { background: #b20710; color: #fff; border-color: #b20710; }
+
+/* Galeri Alanı */
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
+.gallery-item { height: 110px; border-radius: 4px; overflow: hidden; border: 1px solid #222; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; cursor: pointer; }
+.gallery-item img:hover { transform: scale(1.1); filter: brightness(1.2); }
+
+/* Kısa Film Rozeti */
+.short-badge { 
+    position: absolute; top: 10px; left: 10px; 
+    background: #00e054; color: #000; 
+    padding: 4px 10px; border-radius: 3px; 
+    font-size: 10px; font-weight: bold; z-index: 10;
+}
+
+/* =========================================
+   7. FOOTER (Hafta 4)
+   ========================================= */
+footer {
+    clear: both;
+    background-color: #000000;
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid #333333;
+    margin-top: 60px;
+    color: #444444;
+}
+
+/* =========================================
+   8. RESPONSIVE (HAFTA 5 - MEDIA QUERIES)
+   ========================================= */
+@media screen and (max-width: 900px) {
+    .movie-column { width: 48%; }
+    .main-content { width: 70%; }
+    aside { width: 30%; }
+}
+
+@media screen and (max-width: 768px) {
+    .main-content, aside {
+        width: 100%;
+        float: none;
+        padding: 0;
+        border: none;
+    }
+    .movie-column { width: 98%; margin: 10px 1%; }
+    header h1 { font-size: 3.5em; }
+    nav { height: auto; }
+    nav li { float: none; width: 100%; text-align: center; }
+    .search-area { float: none; width: 100%; text-align: center; padding: 15px; }
+    .info-grid { flex-direction: column; }
+
+    /* Üyelik Yükseltme Kartı Tasarımı */
+.upgrade-card {
+    background: linear-gradient(135deg, var(--card-bg) 0%, #1a1a1a 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.upgrade-card:hover {
+    border-color: #ffd700;
+    transform: translateY(-3px);
+}
+
+.upgrade-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,215,0,0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.upgrade-title {
+    font-family: 'Bebas Neue';
+    font-size: 1.4em;
+    color: #ffd700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.upgrade-text {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.upgrade-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-upgrade {
+    flex: 1;
+    padding: 10px;
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-main);
+}
+
+.btn-upgrade.sekans:hover {
+    border-color: #00e054;
+    color: #00e054;
+}
+
+.btn-upgrade.master {
+    background: #ffd700;
+    color: #000;
+    border-color: #ffd700;
+}
+
+.btn-upgrade.master:hover {
+    background: #fff;
+    border-color: #fff;
+}
+
+
+
+
+}
+
